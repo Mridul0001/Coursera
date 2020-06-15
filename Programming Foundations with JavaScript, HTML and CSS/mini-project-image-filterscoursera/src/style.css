@@ -1,0 +1,24 @@
+body{
+  text-align:center;
+  font-family:sans-serif;
+  background-color:#b2c9ab;
+}
+input{
+  padding:5px;
+  margin:2px;
+}
+canvas{
+  border:1px solid grey;
+  min-height:280px;
+  background-color:#CADFC3;
+}
+input[type="button"]{
+  border:none;
+  border-radius:2px;
+  width:100px;
+  height:30px;
+  background-color:#666a86;
+}
+input[type="button"]:hover{
+  background-color:#788aa3;
+}

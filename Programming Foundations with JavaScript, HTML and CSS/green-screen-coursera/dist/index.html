@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Green Screen - Coursera</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Green Screen</h1>
+<div>Upload Foreground Image: 
+  <input id="upfg" type="file" multiple="false" accept="image/*" onchange="uploadFG()">
+</div>
+<div>Upload Background Image: 
+  <input id="upbg" type="file" multiple="false" accept="image/*" onchange="uploadBG()">
+</div>
+<div>
+  <input type="button" value="Green Screen" onclick="doGreenScreen()">
+  <input type="button" value="Reset" onclick="reset()">
+</div>
+<canvas id="fg"></canvas>
+<canvas id="gs"></canvas>
+<!-- partial -->
+  <script src='https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

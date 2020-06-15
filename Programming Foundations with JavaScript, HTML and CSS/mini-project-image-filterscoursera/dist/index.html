@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Mini Project(Image filters) - Coursera</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Upload image to apply filters</h1>
+<canvas id="can"></canvas>
+<div>
+  <input id="fin" type="file" multiple="false" accept="image/*" onchange="upload()">
+</div>
+<div>
+  <input id="gs" type="button" value="Grayscale" onclick="doGrayScale()">
+  <input id="rd" type="button" value="Red" onclick="doRed()">
+  <input id="rb" type="button" value="Rainbow" onclick="doRainbow()">
+  <input id="bl" type="button" value="Blur" onclick="doBlur()">
+  <input id="rs" type="button" value="Reset Original" onclick="doReset()">
+</div>
+<!-- partial -->
+  <script src='https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

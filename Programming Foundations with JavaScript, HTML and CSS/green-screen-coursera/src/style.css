@@ -1,0 +1,16 @@
+body{
+  text-align:center;
+  font-family:sans-serif;
+}
+canvas{
+  border: 1px solid grey;
+  width:520px;
+  height:280px;
+}
+div{
+  margin:5px;
+}
+input[type="button"]{
+  width:200px;
+  height:30px;
+}

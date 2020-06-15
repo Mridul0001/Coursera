@@ -1,0 +1,25 @@
+body{
+  text-align:center;
+}
+#div1, #div2{
+  margin: auto;
+  max-width:30%;
+}
+input{
+ padding:5px;
+ width:100%;
+ color:white; 
+}
+
+.blueback{
+  background-color:blue;
+}
+.orangeback{
+  background-color:orange;
+}
+.blackback{
+  background-color:black;
+}
+.greenback{
+  background-color:green;
+}

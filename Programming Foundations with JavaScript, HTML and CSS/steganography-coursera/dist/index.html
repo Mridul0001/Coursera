@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Steganography - Coursera</title>
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="outer">
+  <div id="view1" class="container-fluid main">
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-center">
+        <span>Choose an option</span>
+        <button type="button" id="encrypt" class="btn btn-outline-primary" onclick="selectedEncrypt()">Encrypt</button>
+        <button type="button" id="encrypt" class="btn btn-outline-success" onclick="selectedDecrypt()">Decrypt</button>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-end">
+        <button id="prev" class="controls disable" type="button" disabled><i class="fas fa-angle-left fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <button id="rst" class="controls disable" type="button" disabled><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-left">
+        <button id="nxt" class="controls disable" type="button" disabled><i class="fas fa-angle-right fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="view2" class="container-fluid main">
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-center">
+        <span>Upload files to encrypt</span>
+        <label for="hide">Upload the file you want to hide&nbsp;&nbsp;&nbsp;: <input id="to_hide" type="file" name="hide" multiple="false" accept="image/*" onchange="uploadHide()"></label>
+        <label for="hidein">Upload the file you want to hide in: <input id="hide_in" type="file" name="hidein" multiple="false" accept="image/*" onchange="uploadHidein()"></label>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-end">
+        <button id="prev" class="controls" type="button" onclick="previous()"><i class="fas fa-angle-left fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <button id="rst" class="controls" type="button" onclick="reset()"><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-left">
+        <button id="nxt" class="controls" type="button" onclick="next('view2')"><i class="fas fa-angle-right fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="view3" class="container-fluid main">
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-center">
+        <span>Upload file to decrypt</span>
+        <label for="decryptf">Upload the file you want to decrypt: <input id="to_decrypt" type="file" multiple="false" accept="image/*" name="decryptf" onchange="uploadDecrypt()"></label>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-end">
+        <button id="prev" class="controls" type="button" onclick="previous()"><i class="fas fa-angle-left fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <button id="rst" class="controls" type="button" onclick="reset()"><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-left">
+        <button id="nxt" class="controls" type="button" onclick="next('view3')"><i class="fas fa-angle-right fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="view4" class="container-fluid main">
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-center">
+        <span id="outmsg"></span>
+        <canvas id="can"></canvas>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-end">
+        <button id="prev" class="controls disable" type="button" disabled><i class="fas fa-angle-left fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <button id="rst" class="controls" type="button" onclick="reset()"><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <div class="col d-flex flex-column align-items-left">
+        <button id="nxt" class="controls disable" type="button" disabled><i class="fas fa-angle-right fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="anim" class="container-fluid main">
+    <div class="row d-flex align-items-center">
+      <div class="col d-flex flex-column align-items-center">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://kit.fontawesome.com/3e62c9a55d.js'></script>
+<script src='https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

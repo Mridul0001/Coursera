@@ -1,0 +1,15 @@
+body{
+  font-family: sans-serif;
+  background-color:#4a4a48;
+  color: #f1f2eb;
+}
+h1{
+  text-align: center;
+}
+.course{
+  text-decoration:none;
+  color: #a4c2a5;
+}
+#nature{
+  border-radius:2%;
+}

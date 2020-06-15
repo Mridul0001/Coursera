@@ -1,0 +1,164 @@
+/*Importing google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+/*Disable all views except 1*/
+#view2, #view3, #view4, #anim{
+  display:none;
+}
+/*Common styles applied to whole body*/
+body{
+  background-color:#F4F0F3;
+  font-family: 'Cabin', sans-serif;
+  overflow-x:hidden;
+}
+/*Adjusting container*/
+#outer{
+  margin:auto;
+  max-width:80%;
+  height:100vh;
+}
+/*Styling the main container*/
+.main{
+  border:5px solid #0F8B8D;
+  border-radius:5px;
+  width:100%;
+  position:relative;
+  top:50%;
+  transform: perspective(1px) translateY(-50%);
+  padding:10px;
+}
+.col{
+  
+  width:100%;
+}
+.row{
+  height:100%;
+}
+/*Styling control buttton*/
+  /*Enabled state*/
+button{
+  width:70%;
+  margin:10px;
+}
+.controls{
+  border:none;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  padding:2px;
+  background-color:#313b72;
+}
+.fas{
+  color:white;
+}
+
+.controls:hover{
+  animation-name:hov;
+  animation-duration:100ms;
+  animation-fill-mode:forwards;
+}
+
+@keyframes hov{
+  100%{
+    width:45px;
+    height:45px;
+    background-color:#3891a6;
+  }
+}
+  /*Disabled state*/
+.disable{
+  background-color:grey;
+}
+.disable:hover{
+  animation:none !important;
+}
+/*Styling file upload section*/
+#view2 label, #view3 label{
+  text-align:center;
+  width:70%;
+  margin:10px;
+  overflow:hidden;
+  border:1px solid #406E8E;
+  border-radius:5px;
+  padding:5px;
+}
+
+#view2 label:hover, #view3 label:hover{
+  background-color:#8EA8C3;
+  border:1px solid #8EA8C3;
+}
+  
+
+/*Styling the canvas*/
+canvas{
+  margin:10px;
+  max-width:100%;
+}
+
+/*Styling span elements*/
+span{
+  color:#EC9A29;
+}
+
+/*for smaller screens*/
+@media(max-width: 500px){
+  #outer{
+   max-width:100%;
+  }
+  button{
+    width:100%;
+  }
+  #view2 label, #view3 label{
+  font-size:0.85em;
+  text-align:left;
+  width:100%;
+  margin:5px;
+  overflow:hidden;
+}
+}
+
+/*Styling loading animation*/
+#anim{
+  height:70%;
+  overflow:hidden;
+  animation:rainbow 7s infinite;
+  animation-timing-function: ease-out;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rainbow{
+  0%{
+    border:5px solid #9400D3;
+  }16%{
+    border:5px solid #4B0082;
+  }32%{
+    border:5px solid #0000FF;
+  }48%{
+    border:5px solid #00FF00;
+  }64%{
+    border:5px solid #FFFF00;
+  }80%{
+    border:5px solid #FF7F00;
+  }100%{
+    border:5px solid #FF0000;
+  }
+}
