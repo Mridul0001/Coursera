@@ -10,7 +10,7 @@ import java.util.*;
 import edu.duke.*;
 
 public class QuakeSortInPlace {
-    private String source = "files/earthquakeDataSampleSix2.atom";
+    private String source = "files/earthQuakeDataWeekDec6sample1.atom";
     public QuakeSortInPlace() {
         // TODO Auto-generated constructor stub
     }
@@ -122,8 +122,8 @@ public class QuakeSortInPlace {
 //        sortByMagnitude(list);
 //        sortByLargestDepth(list);
 //        sortByMagnitudeWithBubbleSort(list);
-//        sortByMagnitudeWithBubbleSortWithCheck(list);
-        sortByMagnitudeWithCheck(list);
+        sortByMagnitudeWithBubbleSortWithCheck(list);
+//        sortByMagnitudeWithCheck(list);
         for (QuakeEntry qe: list) {
             System.out.println(qe);
         }
