@@ -10,7 +10,7 @@ import java.util.*;
 import edu.duke.*;
 
 public class QuakeSortInPlace {
-    private String source = "files/nov20quakedatasmall.atom";
+    private String source = "files/earthquakeDataSampleSix2.atom";
     public QuakeSortInPlace() {
         // TODO Auto-generated constructor stub
     }
@@ -56,6 +56,63 @@ public class QuakeSortInPlace {
         }
     }
 
+    public void onePassBubbleSort(ArrayList<QuakeEntry> quakeData, int numSorted){
+        for(int i=0; i<quakeData.size()-numSorted-1; i++){
+            double magnitude1 = quakeData.get(i).getMagnitude();
+            double magnitude2 = quakeData.get(i+1).getMagnitude();
+            if(magnitude1>magnitude2){
+                QuakeEntry temp1 = quakeData.get(i);
+                QuakeEntry temp2 = quakeData.get(i+1);
+                quakeData.set(i, temp2);
+                quakeData.set(i+1, temp1);
+            }
+        }
+    }
+
+    public void sortByMagnitudeWithBubbleSort(ArrayList<QuakeEntry> in){
+        int numSorted = 0;
+        for(int i=0; i<in.size(); i++){
+            onePassBubbleSort(in, numSorted);
+            numSorted++;
+        }
+    }
+
+    public boolean checkInSortedOrder(ArrayList<QuakeEntry> quakes){
+        for(int i=0; i<quakes.size()-1; i++){
+            if(quakes.get(i).getMagnitude() > quakes.get(i+1).getMagnitude())
+                return false;
+        }
+        return true;
+    }
+
+    public void sortByMagnitudeWithBubbleSortWithCheck(ArrayList<QuakeEntry> in){
+        int numSorted = 0;
+        for(int i=0; i<in.size(); i++){
+            if(checkInSortedOrder(in)){
+                System.out.println("Number of passes needed: " + i);
+                break;
+            }
+            onePassBubbleSort(in, numSorted);
+            numSorted++;
+        }
+    }
+
+    public void sortByMagnitudeWithCheck(ArrayList<QuakeEntry> in) {
+
+        for (int i=0; i< in.size(); i++) {
+            if(checkInSortedOrder(in)){
+                System.out.println("Number of passes needed: " + i);
+                break;
+            }
+            int minIdx = getSmallestMagnitude(in,i);
+            QuakeEntry qi = in.get(i);
+            QuakeEntry qmin = in.get(minIdx);
+            in.set(i,qmin);
+            in.set(minIdx,qi);
+        }
+
+    }
+
     public void testSort() {
         EarthQuakeParser parser = new EarthQuakeParser(); 
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
@@ -63,11 +120,13 @@ public class QuakeSortInPlace {
        
         System.out.println("read data for "+list.size()+" quakes");    
 //        sortByMagnitude(list);
-        sortByLargestDepth(list);
+//        sortByLargestDepth(list);
+//        sortByMagnitudeWithBubbleSort(list);
+//        sortByMagnitudeWithBubbleSortWithCheck(list);
+        sortByMagnitudeWithCheck(list);
         for (QuakeEntry qe: list) {
             System.out.println(qe);
         }
-        
     }
     
     public void createCSV() {
