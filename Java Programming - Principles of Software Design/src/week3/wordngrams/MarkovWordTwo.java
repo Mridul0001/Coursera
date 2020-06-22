@@ -73,4 +73,4 @@ public class MarkovWordTwo implements IMarkovModel{
     public String toString(){
         return "MarkovWord of order 2";
     }
-}
+} //Completed
