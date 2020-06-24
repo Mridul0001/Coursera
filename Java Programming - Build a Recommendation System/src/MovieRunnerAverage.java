@@ -1,8 +1,8 @@
-import java.util.ArrayList;
-
 /**Capstone Project
  * Java Programming - Building a Recommendation System
  * @author Mridul Mahajan*/
+
+import java.util.ArrayList;
 
 public class MovieRunnerAverage {
     //print average ratings for movies

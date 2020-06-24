@@ -144,7 +144,7 @@ public class FirstRatings {
 
             //Storing details of each rater
             if(!raterMap.containsKey(myId)){
-                Rater rater = new Rater(myId);
+                Rater rater = new EfficientRater(myId);
                 rater.addRating(item, rating);
                 raterMap.put(myId, rater);
                 raters.add(rater);
